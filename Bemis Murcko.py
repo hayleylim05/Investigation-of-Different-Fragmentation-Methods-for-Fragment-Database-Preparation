@@ -4,7 +4,7 @@ from rdkit import DataStructs
 from rdkit.Chem import Descriptors
 from rdkit.Chem.Descriptors import HeavyAtomMolWt
 import numpy 
-from rdkit.Chem import Lipinski
+from rdkit.Chem import Lipinski 
 from rdkit.Chem import MACCSkeys
 import matplotlib.pyplot as plt
 
