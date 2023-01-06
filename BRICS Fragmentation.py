@@ -13,11 +13,19 @@ from rdkit.Chem import MACCSkeys
 
 # generation of BRICS fragments 
 
-frags_brics_rdkit = []
+frags_brics_smiles = set()
 
 for m in cdk2mols:
+    if m is None:
+        continue
+            
     pieces = BRICS.BRICSDecompose(m)
-    frags_brics_rdkit.append(pieces)
+    frags_brics_smiles.update(pieces)
+
+frags_brics_rdkit = []
+
+for x in sorted(frags_brics_smiles):
+    frags_brics_rdkit.append(Chem.MolFromSmiles(x))
 
 # analysis of BRICS fragments 
 
